@@ -1,0 +1,21 @@
+spring: 
+  application: 
+    name: country-service 
+server: 
+  port: 6060
+info:
+  description: Country-Service-Eureka App
+  name: Country Service Assignment
+
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka} 
+  instance: 
+    hostname: localhost 
+    preferIpAddress: true
+    status-page-url-path: http://${eureka.instance.hostname}:${server.port}/countries 
+    health-check-url: http://${eureka.instance.hostname}:${server.port}/health 
+    home-page-url: http://${eureka.instance.hostname}:${server.port}/
+  register-with-eureka: true
+  fetch-registry: false
