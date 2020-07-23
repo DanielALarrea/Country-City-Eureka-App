@@ -44,7 +44,7 @@ public class City {
 	// Write as HTML table data
 	@Override
 	public String toString() {
-		return "<tr><td>" + cityName + "</td><td>" + countryName + "</td><td>" + population + "</td><tr>";
+		return "<tr><td>" + cityName + "</td><td>" + countryName + "</a></td><td>" + population + "</td><tr>";
 	}
 
 }

@@ -43,7 +43,9 @@ public class CityService {
 		
 		allCities += tableHeader;
 		for (City ci: cityList) {
-			allCities += ci;
+			allCities += "<tr><td>" + ci.getCityName() + "</td>"
+					+ "<td><a href=cities/" + ci.getCountryName() + ">" + ci.getCountryName() + "</a></td>"
+							+ "<td>" + ci.getPopulation() + "</td><tr>";
 		}
 		
 		allCities+= "</table>";
@@ -77,8 +79,11 @@ public class CityService {
 		
 		// Checks if the table string is an empty table
 		if(allCitiesOfCountry.equals(tableHeader + "</table>")) {
-			allCitiesOfCountry = "Invalid country name. Please enter a valid country name.";
+			allCitiesOfCountry = "Invalid country name. Please enter a valid country name.<br>";
 		}
+		
+		// Link to return to the full list
+		allCitiesOfCountry += "<a href=../cities>BACK</a>";
 		
 		return allCitiesOfCountry;
 	}
